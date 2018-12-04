@@ -1,0 +1,18 @@
+version: "3.1"
+
+services:
+
+  database:
+    image: "postgres:latest"
+    restart: "unless-stopped"
+    environment:
+      POSTGRES_DB: "dbsql"
+      POSTGRES_USER: "team"
+      POSTGRES_PASSWORD: "RpT4nvTV"
+    ports:
+      - "5432:5432"
+    volumes:
+      - "dbsql:/var/lib/postgresql"
+
+volumes:
+  dbsql:
